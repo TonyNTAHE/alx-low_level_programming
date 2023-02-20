@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Prints numbers between 00 to 89
  *
  * Return: Always 0
  */
@@ -9,20 +9,29 @@ int main(void)
 {
 	int i;
 	int j;
-	int n = 0;
 
-	for (i = 0; i <= 8; i++)
+	i = 48;
+	j = 48;
+
+	while (j < 58)
 	{
-		for (j = 1; j <= 9; j++, n++)
+		i = 48;
+		while (i < 58)
 		{
-			if (n > 0)
+			if (j != i && j < i)
 			{
+				putchar(j);
+				putchar(i);
+				if (i == 57 && j == 56)
+				{
+					break;
+				}
 				putchar(',');
 				putchar(' ');
 			}
-			putchar(i + '0');
-			putchar(j + '0');
+			i++;
 		}
+		j++;
 	}
 	putchar('\n');
 	return (0);
