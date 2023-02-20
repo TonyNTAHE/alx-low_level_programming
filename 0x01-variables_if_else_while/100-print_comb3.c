@@ -9,29 +9,21 @@ int main(void)
 {
 	int i;
 	int j;
+	int k = 0;
 
-	i = 48;
-	j = 48;
-
-	while (j < 58)
+	for (i = 0; i <= 8; i++)
 	{
-		i = 48;
-		while (i < 58)
+		for (j = i + 1; j <= 9; j++)
 		{
-			if (j != i && j < i)
-			{
-				putchar(j);
-				putchar(i);
-				if (i == 57 && j == 56)
-				{
-					break;
-				}
+			if (k > 0)
+			{ /* Print comma and space after the first combination*/
 				putchar(',');
 				putchar(' ');
 			}
-			i++;
+			putchar(i + '0');
+			putchar(j + '0');
+			k++;
 		}
-		j++;
 	}
 	putchar('\n');
 	return (0);
