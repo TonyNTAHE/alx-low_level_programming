@@ -9,14 +9,17 @@
  */
 int print_last_digit(int n)
 {
-	int last_d;
+	int l;
 
-	last_d = n % 10;
-
-	if (last_d < 0)
+	l = n % 10;
+	if (l < 0)
 	{
-		last_d *= -1;
+		_putchar(-l + 48);
+		return (-l);
 	}
-	printf("%d", last_d);
-	return (last_d);
+	else
+	{
+		_putchar(l + 48);
+		return (l);
+	}
 }
