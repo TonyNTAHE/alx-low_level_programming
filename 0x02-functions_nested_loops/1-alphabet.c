@@ -1,8 +1,9 @@
-#include <unistd.h>
 #include "main.h"
 
 /**
- * print_alphabet - Prints the alphabet in lowercase
+ * print_alphabet - prints the alphabet, in lowercase, followed by a new line.
+ * _putchar - print character c to stdout
+ * @c: The character to print
  *
  * Return: nothing
  */

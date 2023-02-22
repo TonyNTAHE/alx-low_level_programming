@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * main - chesk the code
  *
- * Retrun: Always 0.
+ * Return: Always 0.
  */
 void print_alphabet(void);
 int main(void)
