@@ -5,13 +5,12 @@
  * in lowercase, followed by a new line.
  *
  * Return: nothing
- *
  */
 void print_alphabet_x10(void)
 {
 	int i;
-	char ch; 
-	
+	char c;
+
 	for (i = 0; i <= 9; i++)
 	{
 		for (ch = 'a'; ch <= 'z'; ch++)
