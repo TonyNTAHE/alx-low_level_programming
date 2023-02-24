@@ -10,17 +10,12 @@ int main(void)
 {
 	int i;
 	int sum = 0;
-	int multiple;
 
 	for (i = 1; i < 1024; i++)
 	{
-		multiple = 3 * i;
-		if (i % 5 == 0)
-		{
-			multiple = 5 * i;
-		}
-		sum += multiple;
+		if ((i % 3) == 0 || (i % 5) == 0)
+			sum += i;
 	}
-	printf("%d", multiple);
-	printf("\n");
+	printf("%d\n", sum);
+	return (0);
 }
