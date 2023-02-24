@@ -24,6 +24,3 @@ int main(void)
 	printf("%d", multiple);
 	printf("\n");
 }
-
-
-
