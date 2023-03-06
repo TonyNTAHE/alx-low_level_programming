@@ -10,4 +10,5 @@ char *cap_string(char *);
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
+#include <ctype.h>
 #endif
