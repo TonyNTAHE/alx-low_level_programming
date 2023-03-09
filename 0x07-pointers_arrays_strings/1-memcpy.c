@@ -9,19 +9,11 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
+	unsigned int index;
 
-	for (i = 0; i < n; i++)
+	for (index = 0; index < n; index++)
 	{
-		if (i == 5 || i == 6)
-		{
-			src[i] = 0x07;
-			dest[i] = src[i];
-		}
-		else
-		{
-			*(dest + i) = *(src + i);
-		}
+			dest[index] = src[index];
 	}
 	return (dest);
 }
