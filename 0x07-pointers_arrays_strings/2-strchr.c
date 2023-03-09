@@ -2,19 +2,18 @@
 
 /**
  * _strchr - locates a character in a string.
- * @s: pointer to the character or byte.
- * @c: the character that we want to point to.
+ * @s: pointer to the character to be searched.
+ * @c: the character to be located.
  * Return: s or NULL if the character is not found.
  */
 char *_strchr(char *s, char c)
 {
-	while (*s != '\0')
+	int i;
+
+	for (i = 0; s[i] >= '\0'; i++)
 	{
-		if (*s == c)
-		{
-			return (s);
-		}
-		s++;
+		if (s[i] == c)
+			return (s + i);
 	}
 	return (NULL);
 }
