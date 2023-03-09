@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int_strspn - the length of prefix substring.
+ * _strspn - the length of prefix substring.
  * @s: Pointer to the first string.
  * @accept: Pointer to the second string.
  * Return: number of number of bytes in the initial
@@ -19,7 +19,7 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 		}
 		if (accept[j] == '\0')
-			return i;
+			return (i);
 	}
 	return (i);
 }
