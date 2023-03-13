@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * numLenght - returns the length of string.
+ * numLength - returns the length of string.
  * @num : operand number
  * Return: number of digits.
  */
@@ -22,7 +22,6 @@ int numLength(int num)
 }
 /**
  * main - prints the first 98 fibonnacci sequences.
- * 
  * Return: 0.
  */
 int main(void)
