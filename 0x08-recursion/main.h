@@ -9,6 +9,7 @@ int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int _putchar(char);
 int is_palindrome(char *s);
+int is_not_product(int num, int factor);
 #include <math.h>
 #include <stdio.h>
 #include <unistd.h>
