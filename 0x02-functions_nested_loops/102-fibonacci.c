@@ -25,4 +25,5 @@ int main(void)
 		z = r;
 	}
 	printf("\n");
+	return (0);
 }
