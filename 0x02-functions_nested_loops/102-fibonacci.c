@@ -14,7 +14,7 @@ int main(void)
 
 	q = 1;
 	z = 2;
-	for(i = 1; i <= 50; i++)
+	for (i = 1; i <= 50; i++)
 	{
 		printf("%ld", q);
 		if (i != 50)
