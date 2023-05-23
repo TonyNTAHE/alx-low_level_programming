@@ -9,16 +9,16 @@
 int main(void)
 {
 	int i;
-	long int a;
-	long int b;
-	long int r;
+	unsigned long int a;
+	unsigned long int b;
+	unsigned long int r;
 
 	a = 1;
 	b = 2;
 	r = 0;
 	for (i = 1; i <= 98; i++)
 	{
-		printf("%ld", a);
+		printf("%lu", a);
 		if (i != 98)
 		{
 			printf(",");
