@@ -8,13 +8,13 @@
 int main(void)
 {
 	int i;
-	int r;
-	int q = 1;
-	int z = 2;
+	long long int r;
+	long long int q = 1;
+	long long int z = 2;
 
 	for (i = 1; i <= 50; i++)
 	{
-		printf("%d", q);
+		printf("%lld", q);
 		if (i != 50)
 		{
 			printf(",");
