@@ -19,6 +19,6 @@ int main()
 			sum += i;
 		}
 	}
-	printf("The sum of multiples of 3 and 5 below %d is = %d\n", n, sum);
+	printf("%d\n", sum);
 	return (0);
 }
