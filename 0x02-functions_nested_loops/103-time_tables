@@ -1,0 +1,56 @@
+#include "main.h"
+
+/**
+ * print_times_table - prints the n times table, starting with 0.
+ * @n: input number.
+ *
+ * Return: nothing.
+ */
+void print_times_table(int n)
+{
+	int i = 0;
+	int j = 0;
+	int r = 1;
+
+	while (i <= n)
+	{
+		while (j <= n)
+		{
+			r = i * j;
+			if (j == 0)
+			{
+				printf("%d", r);
+			}
+			else
+			{
+				printf(",");
+				printf(" ");
+				if (!(r >= 100))
+				{
+					printf(" ");
+				}
+			
+			if (r >= 100)
+			{
+				printf("%d", (r / 100));
+				printf("%02d", (r % 100));
+			}
+			else if (r >= 10)
+			{
+				printf("%d", (r / 10));
+				printf("%d", (r % 10));
+			}
+			else
+			{
+				printf(" ");
+				printf("%d", r);
+			}
+			}
+			j++;
+		}
+		printf("\n");
+		j = 0;
+		i++;
+	}
+}
+
