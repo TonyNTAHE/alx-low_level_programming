@@ -8,9 +8,19 @@
  */
 void reverse_array(int *a, int n)
 {
-int i;
-for (i = n - 1; i > 0; i--)
+int i = 0, temp;
+int j;
+
+while (i < n - 1)
 {
-printf ("%d, ", a[i]);
+j = i + 1;
+while (j > 0)
+{
+temp = *(a + j);
+*(a + j) = *(a + (j - 1));
+*(a + (j - 1)) = temp;
+j--;
+}
+i++;
 }
 }
