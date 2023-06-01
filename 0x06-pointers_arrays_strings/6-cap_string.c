@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * cap_string - convert string into upper letter.
- * @s: string.
- * Return: string.
+ * cap_string - convert string to uppercase.
+ *@s: string.
+ * Return: converted string.
  */
 char *cap_string(char *s)
 {
