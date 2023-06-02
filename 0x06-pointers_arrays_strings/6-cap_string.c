@@ -1,8 +1,8 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * cap_string - convert string to uppercase.
- *@s: string.
+ * @s: string.
  * Return: converted string.
  */
 char *cap_string(char *s)
@@ -10,20 +10,26 @@ char *cap_string(char *s)
 int i = 0;
 while (s[i])
 {
-if (s[i] == '.')
+if (s[i] == '.' && s[i + 1] == '\n')
 {
-i = i + 1;
-if (s[i] != ' ')
+if (s[i + 2] >= 97 && s[i + 2] <= 122)
 {
+s[i + 2] -= 32;
+}
+}
+else if (s[i] == '.')
+{
+i++;
 if (s[i] >= 97 && s[i] <= 122)
 {
 s[i] -= 32;
 }
 }
-}
-if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+else if (s[i] == '\n' || s[i] == ' ' || s[i] == '\t')
 {
-i = i + 1;
+if (s[i] == '\t')
+s[i] = ' ';
+i++;
 if (s[i] >= 97 && s[i] <= 122)
 {
 s[i] -= 32;
