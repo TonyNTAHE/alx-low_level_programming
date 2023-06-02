@@ -8,32 +8,22 @@
 char *cap_string(char *s)
 {
 int i = 0;
+int j;
+int sep[] = {44, 59, 46, 33, 63, 34, 40, 41, 123, 125, 9, 10, 32};
+int n = sizeof(sep) / sizeof(sep[0]);
 while (s[i])
 {
-if (s[i] == '.' && s[i + 1] == '\n')
+j = 0;
+while (j < n)
 {
-if (s[i + 2] >= 97 && s[i + 2] <= 122)
+if (s[i] == sep[j])
 {
-s[i + 2] -= 32;
+if (s[i + 1] >= 97 && s[i + 1] <= 122)
+{
+s[i + 1] -= 32;
 }
 }
-else if (s[i] == '.')
-{
-i++;
-if (s[i] >= 97 && s[i] <= 122)
-{
-s[i] -= 32;
-}
-}
-else if (s[i] == '\n' || s[i] == ' ' || s[i] == '\t')
-{
-if (s[i] == '\t')
-s[i] = ' ';
-i++;
-if (s[i] >= 97 && s[i] <= 122)
-{
-s[i] -= 32;
-}
+j++;
 }
 i++;
 }
