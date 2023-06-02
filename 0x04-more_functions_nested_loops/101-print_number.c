@@ -9,9 +9,8 @@ void print_number(int n)
 {
 	if (n < 0)
 	{
-		n = -n;
 		_putchar(45);
-		_putchar(n + '0');
+		n = -n;
 	}
 	if (n >= 1 && n <= 9)
 	{
