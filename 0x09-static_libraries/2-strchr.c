@@ -13,7 +13,7 @@ while (s[i])
 {
 if (s[i] == c)
 {
-return(&s[i]);
+return (&s[i]);
 break;
 }
 i++;
