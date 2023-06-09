@@ -1,16 +1,17 @@
 #include "main.h"
 
 /**
- * puts - output string and characters.
- * @s: string.
+ * _puts - prints a string, followed by a new line, to stout.
+ * @str: pointer to string.
  * Return: nothing.
  */
-void _puts(char *s)
+void _puts(char *str)
 {
 int i = 0;
-while (s[i])
+
+while (str[i])
 {
-_putchar(s[i]);
+_putchar(str[i]);
 i++;
 }
 _putchar('\n');
