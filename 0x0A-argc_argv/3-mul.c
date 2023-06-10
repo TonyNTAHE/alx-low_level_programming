@@ -21,6 +21,9 @@ mul *= atoi(argv[i]);
 printf("%d\n", mul);
 }
 else
+{
 printf("Error\n");
 return (1);
+}
+return (0);
 }
