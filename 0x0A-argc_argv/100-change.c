@@ -18,10 +18,6 @@ printf("Error\n");
 return (1);
 }
 cent = atoi(argv[1]);
-if (cent < 0)
-{
-printf("0\n");
-}
 for (i = 0; i < 5; i++)
 {
 if (cent >= a[i])
