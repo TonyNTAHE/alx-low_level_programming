@@ -23,6 +23,10 @@ add += atoi(argv[i]);
 }
 printf("%d\n", add);
 }
+else if (argc == 2)
+{
+printf("Error\n");
+}
 else
 {
 printf("%d\n", j);
