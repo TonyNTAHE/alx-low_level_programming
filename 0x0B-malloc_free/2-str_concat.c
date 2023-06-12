@@ -17,8 +17,10 @@ int len1, len2, n;
 len1 = strlen(s1);
 len2 = strlen(s2);
 n = len1 + len2 + 1;
-if (s1 == NULL || s2 == NULL)
-return (NULL);
+if (s1 == NULL)
+s1 = "";
+if(s2 == NULL)
+s2 = "";
 s = malloc(n *sizeof(char));
 if (s == NULL)
 return (NULL);
