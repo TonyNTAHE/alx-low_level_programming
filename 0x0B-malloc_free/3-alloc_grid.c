@@ -17,7 +17,7 @@ if (width <= 0 || height <= 0)
 {
 return (0);
 }
-s = malloc(height * sizeof(int));
+s = malloc(height * sizeof(s));
 if (s == NULL)
 {
 free(s);
@@ -25,7 +25,7 @@ return (NULL);
 }
 for (i = 0; i < height; i++)
 {
-s[i] = malloc(width * sizeof(int));
+s[i] = malloc(width * sizeof(s));
 }
 return (s);
 }
