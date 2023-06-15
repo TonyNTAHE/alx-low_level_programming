@@ -3,13 +3,13 @@
 /**
  * malloc_checked - allocates memory using malloc.
  * @b: block of memory.
- * Return: nothing.
+ * Return: ptr.
  */
 void *malloc_checked(unsigned int b)
 {
-       	int *ptr;
+	int *ptr;
 
-	ptr =  malloc(b);
+	ptr = malloc(b);
 	if (ptr == NULL)
 	{
 		exit(98);
