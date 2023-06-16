@@ -21,12 +21,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		return (ptr);
 	}
-	if (ptr == NULL)
-	{
-		return (malloc(new_size));
-	}
 	s = malloc(new_size);
-
+	if (ptr == NULL || new_size > old_size)
+	{
+		return (s);
+	}
 	if (s != NULL)
 	{
 		if (old_size > new_size)
