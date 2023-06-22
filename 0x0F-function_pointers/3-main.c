@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	if (oprt == NULL)
 	{
 		printf("Error\n");
-		exit (99);
+		exit(99);
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
@@ -29,6 +29,10 @@ int main(int argc, char **argv)
 	{
 		printf("Error\n");
 		exit(100);
+	}
+	else if (argv[2][1])
+	{
+		printf("Error\n");
 	}
 	printf("%d\n", oprt(num1, num2));
 	return (0);
