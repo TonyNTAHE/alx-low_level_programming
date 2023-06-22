@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 	{
 		printf("Error\n");
 		exit(100);
-	}}
+	}
 	printf("%d\n", oprt(num1, num2));
 	return (0);
 }
