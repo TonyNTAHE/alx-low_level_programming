@@ -10,7 +10,7 @@
 int main(int argc, char **argv)
 {
 	int num_of_byts, i;
-	unsigned char *opcodes = (unsigned char *)&main;
+	char *opcodes = (char *)main;
 
 	if (argc != 2)
 	{
@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	}
 	for (i = 0; i < num_of_byts; i++)
 	{
-		printf("%02x ", opcodes[i]);
+		printf("%02x ", opcodes[i] & 0xFF);
 	}
 	printf("\n");
 	return (0);
