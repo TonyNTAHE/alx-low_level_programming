@@ -7,14 +7,13 @@
  */
 size_t print_list(const list_t *h)
 {
-	const list_t *p = NULL;
+	const list_t *p = h;
 	int count = 0;
 
-	if (h == NULL)
+	if (p == NULL)
 	{
 		return (1);
 	}
-	p = h;
 	while (p != NULL)
 	{
 		if (p->str == NULL)
