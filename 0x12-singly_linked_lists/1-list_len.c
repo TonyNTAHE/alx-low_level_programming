@@ -8,7 +8,7 @@
 size_t list_len(const list_t *h)
 {
 	int len = 0;
-	const list_t *p = NULL;
+	const list_t *p = malloc(sizeof(list_t));
 
 	if (h == NULL)
 		return (-1);
@@ -18,6 +18,7 @@ size_t list_len(const list_t *h)
 		len++;
 		p = p->next;
 	}
+	free(p;)
 	return (len);
 }
 
