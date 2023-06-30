@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * tony  - prints before the main function.
+ * before_main  - prints before the main function.
  */
 void __attribute__((constructor)) tony()
 {
