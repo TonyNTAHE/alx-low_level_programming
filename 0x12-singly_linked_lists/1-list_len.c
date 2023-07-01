@@ -11,7 +11,7 @@ size_t list_len(const list_t *h)
 	const list_t *p = malloc(sizeof(list_t));
 
 	if (h == NULL)
-		return (-1);
+		return (len);
 	p = h;
 	while (p != NULL)
 	{

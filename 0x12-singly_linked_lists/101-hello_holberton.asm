@@ -1,15 +1,15 @@
-section .text
-         global _start
-_start :
-         mov edx, len
-         mov ecx, msg
-         mov ebx, 1
-         mov eax, 4
-         int 0x80
-
-         mov eax, 1
-         int 0x80
-
 section  .data
-         msg db "Hello, Holberton", 0xa
-         len equ $ -msg
+   message db "hello, holberton", 0xa
+
+ section .text
+     global _start
+
+_start:
+
+  mov ah, 09h
+  mov dx, message
+  int 21h
+
+  mov ah, 4Ch
+  xor al, al
+  int 21h 
