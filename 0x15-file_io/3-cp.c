@@ -37,15 +37,7 @@ int main(int argc, char **argv)
 		bytes_read = read(fd1, buffer, sizeof(buffer));
 		write(fd2, buffer, bytes_read);
 	}
-	if (close(fd1) == -1)
-	{
-		perror("Error: Can't close file descriptor\n");
-		exit(100);
-	}
-	if(close(fd2) == -1)
-	{
-		perror("Error: Can't close file descriptor\n");
-		exit(100);
-	}
+	close(fd1);
+	close(fd2);
 	return (0);
 }
