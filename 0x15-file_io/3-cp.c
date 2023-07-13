@@ -26,19 +26,26 @@ int main(int argc, char **argv)
 		perror("Error: Can't read from file file_from\n");
 		exit(98);
 	}
-	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC);
+	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
 		perror("Error: Can't write to file_to\n");
 		exit(99);
 	}
-	fchmod(fd2, 0664);
 	while (bytes_read > 0)
 	{
 		bytes_read = read(fd1, buffer, sizeof(buffer));
 		write(fd2, buffer, bytes_read);
 	}
-	close(fd1);
-	close(fd2);
+	if (close(fd1) == -1)
+	{
+		perror("Error: Can't close file descriptor\n");
+		exit(100);
+	}
+	if(close(fd2) == -1)
+	{
+		perror("Error: Can't close file descriptor\n");
+		exit(100);
+	}
 	return (0);
 }
