@@ -2,8 +2,8 @@
 
 /**
  * main - copy file from one to another.
- * @ac: argument count
- * @av: argument vector.
+ * @argc: argument count
+ * @argv: argument vector.
  * Return: 0.
  */
 int main(int argc, char **argv)
@@ -12,9 +12,10 @@ int main(int argc, char **argv)
 	char *file_to;
 	int fd1, fd2, bytes_read = 1;
 	char buffer[1024];
+
 	if (argc != 3)
 	{
-		fprintf(stderr,"cp file_from file_to\n");
+		fprintf(stderr, "cp file_from file_to\n");
 		exit(97);
 	}
 	file_from = argv[1];
