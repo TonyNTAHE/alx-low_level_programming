@@ -7,12 +7,12 @@
  */
 int main(int argc, char **argv)
 {
-	int c, w ,r;
+	int c, w, r;
 	char *file_from;
 	char *file_to;
 	int fd1, fd2;
 	char buffer[1024];
-	
+
 	if (argc != 3)
 	{
 		fprintf(stderr, "cp file_from file_to\n");
