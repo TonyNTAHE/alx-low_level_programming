@@ -1,5 +1,19 @@
 #include "main.h"
 /**
+ * error_msg - displays error messages.
+ * @x: first argument.
+ * @msg: the message.
+ * @ext_code: integer.
+ */
+void error_msg(int x, const char *msg, int ext_code)
+{
+	if (x == -1)
+	{
+		perror(msg);
+		exit(ext_code);
+	}
+}
+/**
  * main - copies two files.
  * @argc: argument count.
  * @argv: argument vector.
@@ -17,33 +31,17 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	if (fd1 == -1)
-	{
-		perror("Error: Can't read from file file_from\n");
-		exit(98);
-	}
+	error_msg(fd1, "Error: Can't read the file\n", 98);
 	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (fd2 == -1)
-	{
-		perror("Error: Can't write to file_to\n");
-		exit(99);
-	}
+	error_msg(fd2, "Error: Can't write to file_to\n", 99);
 	while ((r = read(fd1, buffer, sizeof(buffer))) > 0)
 	{
 		w = write(fd2, buffer, r);
-		if (w == -1)
-		{
-			perror("Error: Can't write to file_to\n");
-			exit(99);
-		}
+		error_msg(w, "Error: Can't write to file_to\n", 99);
 	}
 	c = close(fd1);
-	if (c == -1)
-		perror("Error: Can't close fd fd1\n");
-	exit(100);
+	error_msg(c, "Error: Can't close fd fd1\n", 100);
 	c = close(fd2);
-	if (c == -1)
-		perror("Error: Can't close fd fd2\n");
-	exit(100);
+	error_msg(c, "Error: Can't close fd fd2\n", 100);
 	return (0);
 }
