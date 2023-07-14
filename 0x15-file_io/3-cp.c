@@ -1,18 +1,18 @@
 #include "main.h"
-
 /**
- * main - copy file from one to another.
- * @argc: argument count
+ * main - copies two files.
+ * @argc: argument count.
  * @argv: argument vector.
  * Return: 0.
  */
 int main(int argc, char **argv)
 {
+	int c, w ,r;
 	char *file_from;
 	char *file_to;
-	int fd1, fd2, bytes_read = 1;
+	int fd1, fd2;
 	char buffer[1024];
-
+	
 	if (argc != 3)
 	{
 		fprintf(stderr, "cp file_from file_to\n");
@@ -32,12 +32,26 @@ int main(int argc, char **argv)
 		perror("Error: Can't write to file_to\n");
 		exit(99);
 	}
-	while (bytes_read > 0)
+	while ((r = read(fd1, buffer, sizeof(buffer))) > 0)
 	{
-		bytes_read = read(fd1, buffer, sizeof(buffer));
-		write(fd2, buffer, bytes_read);
+		w = write(fd2, buffer, r);
+		if (w == -1)
+		{
+			perror("Error: Can't write to file_to\n");
+			exit(99);
+		}
 	}
-	close(fd1);
-	close(fd2);
-	return (0);
+	c = close(fd1);
+	if (c == -1)
+	{
+		perror("Error: Can't close fd fd1\n");
+		exit(100);
+	}
+	c = close(fd2);
+	if (c == -1)
+	{
+		perror("Error: Can't close fd fd2\n");
+		exit(100);
+	}
+	return 0;
 }
