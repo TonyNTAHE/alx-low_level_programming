@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 	fd1 = open(argv[1], O_RDONLY);
 	error_msg(fd1, "Error: Can't read from file %s\n", 98, argv[1]);
 	fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	error_msg(fd2, "Error: Can't write to file %s\n", 99), argv[2];
+	error_msg(fd2, "Error: Can't write to file %s\n", 99, argv[2]);
 	while ((bytes = read(fd1, buffer, 1024)) > 0)
 	{
 		nbytes = write(fd2, buffer, bytes);
