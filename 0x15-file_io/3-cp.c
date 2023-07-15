@@ -14,7 +14,7 @@ void error_msg(int x, char *msg, int ext, ...)
 		va_list fmt;
 
 		va_start(fmt, ext);
-		vfprint(stderr, msg, fmt);
+		dfprint(STDERR_FILENO, msg, fmt);
 		va_end(fmt);
 		exit(ext);
 	}
