@@ -1,56 +1,65 @@
 #include "main.h"
-#include <stdarg.h>
 
 /**
- * error_msg  - display error messages.
- * @x: first argument
- * @msg: the message.
- * @ext: integer.
+ * error - checks if files can be opened.
+ * @file1: file to copy from.
+ * @file2: file to copy into.
+ * @argv: argument vector.
+ * Return: no return.
  */
-void error_msg(int x, char *msg, int ext, ...)
+void error(int file1, int file2, char *argv[])
 {
-	if (x == -1)
+	if (file1 == -1)
 	{
-		va_list fmt;
-
-		va_start(fmt, ext);
-		dprintf(STDERR_FILENO, msg, va_arg(fmt, char *));
-		va_end(fmt);
-		exit(ext);
+		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+	}
+	if (file2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+		exit(98);
 	}
 }
 /**
- * main - copies a files into another file.
+ * main - copies characters from a file to another.
  * @argc: argument count.
  * @argv: argument vector.
- * Return: 0.
+ * Return: Always 0.
  */
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int fd1, fd2;
-	ssize_t nbytes, bytes;
-	char buffer[1024];
+	int fd1, fd2, c;
+	ssize_t nbytes = 1024, bytes;
+	char buffer[10024];
 
 	if (argc != 3)
 	{
-		dprintf(stderr, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_form file_to");
 		exit(97);
 	}
 	fd1 = open(argv[1], O_RDONLY);
-	error_msg(fd1, "Error: Can't read from file %s\n", 98, argv[1]);
-	fd2 = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	error_msg(fd2, "Error: Can't write to file %s\n", 99, argv[2]);
-	while ((bytes = read(fd1, buffer, 1024)) > 0)
+	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	error(fd1, fd2, argv);
+
+	while (nbytes == 1024)
 	{
-		nbytes = write(fd2, buffer, bytes);
-		error_msg(nbytes, "Can't write to file %s\n", 99, argv[2]);
-		if (nbytes != bytes)
-		{
-			close(fd2);
-			return (-1);
-		}
+		nbytes = read(fd1, buffer, 1024);
+		if (nbytes == -1)
+			error(-1, 0, argv);
+		bytes = write(fd2, buffer, nbytes);
+		if (bytes == -1)
+			error(0, -1, argv);
 	}
-	error_msg(close(fd1), "Error: Can't close fd %d\n", 100, fd1);
-	error_msg(close(fd2), "Error: Can't close fd %d\n", 100, fd2);
+	c = close(fd1);
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd1);
+		exit(100);
+	}
+	c = close(fd2);
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd2);
+		exit(100);
+	}
 	return (0);
 }
