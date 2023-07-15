@@ -12,11 +12,12 @@ void error(int file1, int file2, char *argv[])
 	if (file1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+		exit(98);
 	}
 	if (file2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
-		exit(98);
+		exit(99);
 	}
 }
 /**
