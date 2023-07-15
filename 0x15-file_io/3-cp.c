@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 {
 	int fd1, fd2, c;
 	ssize_t nbytes = 1024, bytes;
-	char buffer[10024];
+	char buffer[1024];
 
 	if (argc != 3)
 	{
