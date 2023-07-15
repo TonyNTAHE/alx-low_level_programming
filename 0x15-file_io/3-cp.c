@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	error(fd1, fd2, argv);
 
-	while (nbytes == 1024)
+	while (nbytes != 0)
 	{
 		nbytes = read(fd1, buffer, 1024);
 		if (nbytes == -1)
