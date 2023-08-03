@@ -1,28 +1,21 @@
-# Variables, if, else and while
+## C- Variables, if, else, while
 
-Project done during **Full Stack Software Engineering studies** at **ALX**. It aims to learn about arithmetic operators, relational operators, boolean operators, comments, declaring variables and loops in **C language**.
+* This Project was done during ALX software programming in the first sprint, and it aims on how
+to use variables and looping condictions like if, else and while .
+* All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options `-wall -Werror -Wextra -pedantic -std=gnu89`
 
-## Technologies
-* C files are compiled using `gcc 4.8.4`
-* C files are written according to the C90 standard
-* Tested on Ubuntu 14.04 LTS
-
-## Files
-All of the following files are programs written in C:
-
-| Filename | Description |
-| -------- | ----------- |
-| `0-positive_or_negative.c` | Prints `is positive`, `is zero` or `is negative` when a randomly generated number is any of these cases |
-| `1-last_digit.c` | Prints the last digit of a randomly generated number |
-| `2-print_alphabet.c` | Prints the alphabet in lowercase |
-| `3-print_alphabets.c` | Prints the alphabet in lowercase, and then in uppercase |
-| `4-print_alphabet.c` | Prints the alphabet in lowercase, except `q` and `e` letters |
-| `5-print_numbers.c` | Prints all single digit numbers of base 10 starting from `0` |
-| `6-print_numberz.c` | Prints all single digit numbers of base 10 starting from `0`, without using `char` variables |
-| `7-print_tebahpla.c` | Prints the lowercase alphabet in reverse |
-| `8-print_base16.c` | Prints all the numbers of base 16 in lowercase |
-| `9-print_comb.c` | Prints all possible combinations of single-digit numbers |
-| `10-print_comb2.c` | Prints the numbers from 00 to 99 |
-| `100-print_comb3.c` | Prints all possible different combinations of two digits, separated by `,` |
-| `101-print_comb4.c` | Prints all possible different combinations of three digits, separated by `,` |
-| `102-print_comb5.c` | Prints all possible combinations of two two-digit numbers |
+|File                        |    Description                                                                                                                                                                        |
+|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|`0-positive_or_negative.c`  | This program will assign a random number to the variable n each time it is executed. Complete the source code in order to print the last digit of the number stored in the variable n |
+|`1-last_digit.c`            | program that prints the alphabet in lowercase, followed by a new line.                                                                                                                |
+|`2-print_alphabet.c`        | Program that prints the alphabet in lowercase, followed by a new line.                                                                                                                |
+|'3-print_alphabets.c'       | Program that prints the alphabet in lowercase, and then in uppercase.                                                                                                                 |
+|`4-print_alphabet.c`        | Program that prints the alphabet in lowercase, followed by a new line.Prints all letters except q and e                                                                               |
+|`5-print_numbers.c`         | Program that prints all single digit numbers of base 10 starting from 0, followed by a new line.                                                                                      |
+|`6-print_numberz.c`         | Program that prints all single digit numbers of base 10 starting from 0, followed by a new line.                                                                                      |
+|`7-print_tebahpla.c`        | Program that prints the lowercase alphabet in reverse, followed by a new line.                                                                                                        |
+|`8-print_base16.c`          | Program that prints all the numbers of base 16 in lowercase, followed by a new line.                                                                                                  |
+|`9-print_comb.c`            | Program that prints all possible combinations of single-digit numbers.                                                                                                                |
+|`100-print_cobm3.c`         | Program that prints all possible different combinations of two digits.                                                                                                                |
+|`101-print_comb4.c`         | Program that prints all possible different combinations of three digits.                                                                                                              |
+|`102-print_comb5.c`         | Program that prints all possible combinations of two two-digit numbers.The numbers should range from 0 to 99                                                                          |
