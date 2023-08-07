@@ -13,7 +13,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (filename == NULL)
 		return (-1);
 	f = fopen(filename, "a");
-	if (f == NULL)
+	if (f == NULL )
 	{
 		return (-1);
 	}
@@ -21,5 +21,24 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		fputs(text_content, f);
 	}
+	fclose(f);
 	return (1);
+}
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(int ac, char **av)
+{
+    int res;
+
+    if (ac != 3)
+    {
+        dprintf(2, "Usage: %s filename text\n", av[0]);
+        exit(1);
+    }
+    res = append_text_to_file(av[1], av[2]);
+    printf("-> %i)\n", res);
+    return (0);
 }
