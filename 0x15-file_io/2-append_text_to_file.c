@@ -8,19 +8,29 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *f;
+	int fd;
+	ssize_t nwrite;
 
 	if (filename == NULL)
 		return (-1);
-	f = fopen(filename, "a");
-	if(f == NULL )
+	if (text_content == NULL)
+	{
+		if (filename)
+			return (1);
+		else
+			return (-1);
+	}
+	fd = open(filename, O_WRONLY | O_APPEND);
+	if (fd == -1)
 	{
 		return (-1);
 	}
-	if (text_content != NULL)
+	nwrite = write(fd, text_content, strlen(text_content));
+	if (nwrite == -1)
 	{
-		fputs(text_content, f);
+		close(fd);
+		return (-1);
 	}
-	fclose(f);
+	close(fd);
 	return (1);
 }
