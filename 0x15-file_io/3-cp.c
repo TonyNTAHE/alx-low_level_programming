@@ -41,9 +41,9 @@ int main(int argc, char **argv)
 		error_msg(98, "Error: Can't read from", argv[1]);
 	i = close(fd1);
 	if (i == -1)
-		dprintf(STDERR_FILENO, "Can't close fd %d", i);
+		dprintf(STDERR_FILENO, "Can't close fd %d", fd1);
 	j = close(fd2);
 	if (j == -1)
-		dprintf(STDERR_FILENO, "Can't close fd %d", j);
+		dprintf(STDERR_FILENO, "Can't close fd %d", fd2);
 	return (0);
 }
