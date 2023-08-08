@@ -23,27 +23,27 @@ int main(int argc, char **argv)
 	ssize_t nread, nwrite;
 
 	if (argc < 3)
-		error_msg(97, "Usage: cp file_from file_to", "");
+		error_msg(97,"Usage: cp file_from file_to", "");
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
-		error_msg(98, "Error: Can't read from", argv[1]);
+		error_msg(98,"Error: Can't read from", argv[1]);
 	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 == -1)
-		error_msg(99, "Error: Can't write to", argv[2]);
+		error_msg(99,"Error: Can't write to", argv[2]);
 	nread = 1024;
 	while ((nread = read(fd1, buffer, sizeof(buffer))) > 0)
 	{
 		nwrite = write(fd2, buffer, nread);
 		if (nwrite == -1)
-			error_msg(99, "Error: can't  write to", argv[2]);
+			error_msg(99,"Error: can't  write to", argv[2]);
 	}
 	if (nread == -1)
-		error_msg(98, "Error: Can't read from", argv[1]);
+		error_msg(98,"Error: Can't read from", argv[1]);
 	i = close(fd1);
 	if (i == -1)
-		dprintf(STDERR_FILENO, "Can't close fd %d", fd1);
+		dprintf(STDERR_FILENO,"Can't close fd %d", fd1);
 	j = close(fd2);
 	if (j == -1)
-		dprintf(STDERR_FILENO, "Can't close fd %d", fd2);
+		dprintf(STDERR_FILENO,"Can't close fd %d", fd2);
 	return (0);
 }
