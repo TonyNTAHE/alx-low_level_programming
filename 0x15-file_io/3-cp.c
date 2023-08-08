@@ -45,6 +45,5 @@ int main(int argc, char **argv)
 	j = close(fd2);
 	if (j == -1)
 		dprintf(STDERR_FILENO, "Can't close fd %d", fd2);
-	free(buffer);
 	return (0);
 }
