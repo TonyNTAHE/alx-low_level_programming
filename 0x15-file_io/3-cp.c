@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	ssize_t nread, nwrite;
 
 	if (argc < 3)
-		error_msg(97, "Usage:cp file_from file_to", "");
+		error_msg(97, " Usage: cp file_from file_to", "");
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
 		error_msg(98, "Error: Can't read from", argv[1]);
