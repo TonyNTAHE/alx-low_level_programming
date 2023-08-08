@@ -20,7 +20,7 @@ void error_msg(int code, const char *msg, const char *filename)
 int main(int argc, char **argv)
 {
 	char buffer[1024];
-	int fd1, fd2, i , j;
+	int fd1, fd2, i, j;
 	ssize_t nread, nwrite;
 
 	if (argc < 3)
