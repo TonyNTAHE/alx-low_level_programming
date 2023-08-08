@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 == -1)
 		error_msg(99, "Error: Can't write to", argv[2]);
-	/*nread = 1024;*/
+	nread = 1024;
 	while ((nread = read(fd1, buffer, sizeof(buffer))) > 0)
 	{
 		nwrite = write(fd2, buffer, nread);
