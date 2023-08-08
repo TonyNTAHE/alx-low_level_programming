@@ -18,7 +18,7 @@ void error_msg(int code, const char *msg, const char *filename)
  */
 int main(int argc, char **argv)
 {
-	char *buffer;
+	char buffer[1024];
 	int fd1, fd2, i, j;
 	ssize_t nread, nwrite;
 
@@ -30,10 +30,7 @@ int main(int argc, char **argv)
 	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 == -1)
 		error_msg(99, "Error: Can't write to", argv[2]);
-	buffer = malloc(sizeof(char) * 1024);
-	if (buffer == NULL)
-		return (-1);
-	nread = 1024;
+	/*nread = 1024;*/
 	while ((nread = read(fd1, buffer, sizeof(buffer))) > 0)
 	{
 		nwrite = write(fd2, buffer, nread);
