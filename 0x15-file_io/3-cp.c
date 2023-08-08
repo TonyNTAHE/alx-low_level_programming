@@ -20,7 +20,7 @@ void error_msg(int code, const char *msg, const char *filename)
 int main(int argc, char **argv)
 {
 	char buffer[1024];
-	int fd1, fd2, i, j;
+	int fd1, fd2;
 	ssize_t nread, nwrite;
 
 	if (argc < 3)
@@ -40,11 +40,9 @@ int main(int argc, char **argv)
 	}
 	if (nread == -1)
 		error_msg(98, "Error: Can't read from file", argv[1]);
-	i = close(fd1);
-	if (i == -1)
+	if (close(fd1) == -1)
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd1);
-	j = close(fd2);
-	if (j == -1)
+	if (close(fd2) == -1)
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd2);
 	return (0);
 }
