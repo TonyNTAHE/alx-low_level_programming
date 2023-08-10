@@ -1,13 +1,22 @@
-## C- File I/O
+# Bit manipulation
+Project done during **Full Stack Software Engineering studies** at **ALX**. It aims to learn about how to manipulate bits and use bitwise operators in **C language**.
 
-* This Project was done during ALX software programming in the first sprint, and it aims on how
-to create, open, close, read and write files.
-* All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options `-wall -Werror -Wextra -pedantic -std=gnu89`
+## Technologies
+* Scripts written in Bash 4.3.11(1)
+* C files are compiled using `gcc 4.8.4`
+* C files are written according to the C90 standard
+* Tested on Ubuntu 14.04 LTS
 
-|File                       |    Description                                                                                        |
-|---------------------------|-------------------------------------------------------------------------------------------------------|
-| `0-read_textfile.c`       |        function that reads a text file and prints it to the `POSIX` standard output                   |
-| `1-create_file.c`         |        function that  creates a file                                                                  |
-| `2-append_text_to_file.c` |        function that appends text at the end of a file                                                |
-| `3-cp.c`                  |        program that copies the content of a file to another file                                      |
-| `100-elf_header.c`        |        program that displays the information contained in the ELF header at the start of an ELF file. |
+## Files
+All of the following files are scripts and programs written in C:
+
+| Filename | Description |
+| -------- | ----------- |
+| `0-binary_to_uint.c` | Converts a binary number to an `unsigned int` |
+| `1-print_binary.c` | Prints the binary representation of a number |
+| `2-get_bit.c` | Returns the value of a bit at a given index |
+| `3-set_bit.c` | Sets the value of a bit to `1` at a given index |
+| `4-clear_bit.c` | Sets the value of a bit to `0` at a given index |
+| `5-flip_bits.c` | Returns the number of bits needed to flip to get from one number to another |
+| `100-get_endianess.c` | Checks the endianness |
+| `101-password` | Script that contains the password of `crackme3` file |
